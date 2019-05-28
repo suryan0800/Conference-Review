@@ -334,7 +334,7 @@ public class Conference extends Frame implements ActionListener {
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery("select * from ratings");
 			
-			// create table ratings(merit int,readability int,origin int,relav int,recom int,comment1 varchar(20),comment2 varchar(20),paperno varchar(20),email varchar(20));
+			
 			while (rs.next()) {
 				ra = new Ratings(this, reviewer, paper);
 				ra.paper = paper.get(rs.getString("paperno"));
@@ -439,7 +439,7 @@ public class Conference extends Frame implements ActionListener {
 		try {
 			String query = " insert into ratings" + " values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-			
+			// create table ratings(merit int,readability int,origin int,relav int,recom int,comment1 varchar(20),comment2 varchar(20),paperno varchar(20),email varchar(20));
 			
 			PreparedStatement preparedStmt = con.prepareStatement(query);
 			preparedStmt.setInt(1, ra.tech_merit);
